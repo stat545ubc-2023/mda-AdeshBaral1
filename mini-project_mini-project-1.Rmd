@@ -1,9 +1,7 @@
 ---
 title: "Mini Data-Analysis Deliverable 1"
 Author: "Adesh Baral"
-output: 
-  html_document: 
-    keep_md: yes
+output: github_document
 ---
 
 # Welcome to your (maybe) first-ever data analysis project!
