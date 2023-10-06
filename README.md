@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 # Mini-Data Analysis (Milestone 1)
 ## Author: Adesh Baral
 ## Description 
@@ -5,4 +8,5 @@ This repository consists of files and code of the STAT 545A Mini Data Analysis p
 
 ## Files Present in this Repository
 1. README.md
-2. 
+2. mini-project_mini-project-1.Rmd
+3. mini-project_mini-project-1.md
