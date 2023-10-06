@@ -1,3 +1,2 @@
-##mda-project-template
-Title: "Mini Data-Analysis Deliverable 1"
-Author: "Adesh Baral"
+Mini-Data Analysis (Milestone 1)
+Author: Adesh Baral
