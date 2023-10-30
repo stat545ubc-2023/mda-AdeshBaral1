@@ -42,22 +42,14 @@ By the end of this milestone, you should:
 
 Begin by loading your data and the tidyverse package below:
 
-<!-- -->
-
-    install.packages("devtools")
-    devtools::install_github("UBC-MDS/datateachr")
 
 2.  Load the packages below.
 
-
 ```{r, message = FALSE}
-
 library(datateachr) # <- might contain the data you picked!
 library(tidyverse)
 library(here) # <- task 4 required
 library(readr)
-```
-```
 ```
 
 # Task 1: Process and summarize your data 
@@ -300,7 +292,7 @@ A reminder of the definition of *tidy* data:
 
 Based on the definition above, can you identify if your data is tidy or untidy? Go through all your columns, or if you have \>8 variables, just pick 8, and explain whether the data is untidy or tidy.
 
-```{r}
+```{r} 
 cancer_subset <- cancer_sample %>%
   select(ID, diagnosis, radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean )
 print(cancer_subset)
@@ -308,7 +300,7 @@ print(cancer_subset)
 
 To ensure that each row represents a unique observation, I will examine the values in the ID column. If each ID is associated with a distinct patient without any duplicates, it confirms that each row indeed corresponds to a unique patient in the dataset.
 
-```{r}
+```{r} 
 is_distinct <- n_distinct(cancer_subset$ID) == nrow(cancer_subset)
 
 print(is_distinct)
@@ -332,7 +324,7 @@ If your data is untidy, then tidy it! Then, untidy it back to it's original stat
 Be sure to explain your reasoning for this task. Show us the "before" and "after".
 
 Before;
-```{r}
+```{r} 
 cancer_sample
 ```
 
@@ -351,7 +343,7 @@ untidy_cancer
 
 #Now tidy it back to the Original State.
 This will restore the data to its original wide format.
-```{r}
+```{r} 
 tidy_cancer <- untidy_cancer %>%
   pivot_wider(
     names_from = variable,
@@ -388,7 +380,7 @@ Now, try to choose a version of your data that you think will be appropriate to 
 For this question, we only need the "radius_mean" and "diagnosis" columns.
 
 ```{r}
-#Select relevant columns
+# Select relevant columns
 cancer_data_rq1 <- cancer_sample %>%
   select(diagnosis, radius_mean)
 
@@ -400,7 +392,7 @@ head(cancer_data_rq1)
 For this question, we need all numerical features except "ID."
 
 ```{r}
-#Select relevant columns (all numerical features except ID)
+# Select relevant columns (all numerical features except ID)
 cancer_data_rq2 <- cancer_sample %>%
   select(-ID, where(is.numeric))
 
@@ -433,6 +425,7 @@ Fit a model or run a hypothesis test that provides insight on this variable with
     -   You could use `lm()` to test for significance of regression coefficients.
 
 ```{r}
+
 t_test_result <- t.test(cancer_data_rq1$radius_mean ~ cancer_data_rq1$diagnosis)
 
 t_test_result
@@ -475,6 +468,7 @@ Take a summary table that you made from Task 1, and write it as a csv file in yo
 -   **Reproducibility criteria**: You should be able to delete the csv file, and remake it simply by knitting this Rmd file.
 
 ```{r}
+
 write_csv(radius_mean_summary, here::here("output", "MDA2_radius_mean_summary.csv"))
 
 ```
@@ -489,6 +483,7 @@ Write your model object from Task 3 to an R binary file (an RDS), and load it ag
 
 
 ```{r}
+
 saveRDS(t_test_result, here::here("output", "t_test_result.RDS"))
 #Save the t_test_result in a file named “t_test_result.RDS” to a folder named “output”
 readRDS(here::here("output", "t_test_result.RDS"))
