@@ -1,8 +1,6 @@
 ---
-title: "Mini Data-Analysis 2"
-Author: "Adesh Baral"
+title: "Mini Data Analysis Milestone 2"
 output: github_document
----
 ---
 
 *To complete this milestone, you can either edit [this `.rmd` file](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/mini-project/mini-project-2.Rmd) directly. Fill in the sections that are commented out with `<!--- start your work here--->`. When you are done, make sure to knit to an `.md` file by changing the output in the YAML header to `github_document`, before submitting a tagged release on canvas.*
@@ -44,12 +42,17 @@ By the end of this milestone, you should:
 
 Begin by loading your data and the tidyverse package below:
 
-```{r, message = FALSE}
-install.packages("here")
-library(here)
-library(datateachr) # <- might contain the data you picked!
+<!-- -->
+
+    install.packages("devtools")
+    devtools::install_github("UBC-MDS/datateachr")
+
+2.  Load the packages below.
+
+```{r}
+library(datateachr)
 library(tidyverse)
-library(readr)
+```
 ```
 
 # Task 1: Process and summarize your data 
@@ -122,7 +125,6 @@ radius_mean_summary <- cancer_sample %>%
     SD = sd(radius_mean)
   )
 print(radius_mean_summary)
-
 ```
 The results show the summary statistics for "radius_mean" for both malignant (M) and benign (B) diagnoses.
 

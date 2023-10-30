@@ -688,6 +688,7 @@ library(ggplot2)
 ggplot(cancer_sample, aes(x = radius_mean)) +
   geom_histogram(binwidth = 2, fill = "blue", color = "black") +
   labs(title = "Distribution of Radius Mean", x = "Radius Mean", y = "Frequency")
+  print(ggplot)
 ```
 
 ![](mini-project_mini-project-1_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
