@@ -493,12 +493,6 @@ saveRDS(t_test_result, here::here("output", "t_test_result.RDS"))
 readRDS(here::here("output", "t_test_result.RDS"))
 
 ```
-# Save the model object to an RDS file
-model <- lm(radius_mean ~ diagnosis, data = cancer_data_rq1)
-saveRDS(model, file = here::here("output", "model_radius_mean.rds"))
-
-# Load the model object from the RDS file
-loaded_model <- readRDS(here::here("output", "model_radius_mean.rds"))
 
 # Overall Reproducibility/Cleanliness/Coherence Checklist 
 
