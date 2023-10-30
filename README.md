@@ -10,3 +10,5 @@ This repository consists of files and code of the STAT 545A Mini Data Analysis p
 1. README.md
 2. mini-project_mini-project-1.Rmd
 3. mini-project_mini-project-1.md
+4. MDA 2.md
+5. MDA2. RMD
